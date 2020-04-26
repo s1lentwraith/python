@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+from netmiko import ConnectHandler
+cisco_nxos1 = {
+    'device_type': 'cisco_nxos',
+    'ip': 'IP',
+    'username': 'user',
+    'password': 'password',
+}
+cisco_nxos2 = {
+    'device_type': 'cisco_nxos',
+    'ip': 'IP',
+    'username': 'user',
+    'password': 'password',
+}
+
+with open('config') as f:
+    lines = f.read().splitlines()
+print (lines)
+
+
+all_devices = [cisco_nxos1, cisco_nxos2]
+
+for devices in all_devices:
+    net_connect = ConnectHandler(**devices)
+    output = net_connect.send_config_set(lines)
+    print (output) 
+
+f.closed 
