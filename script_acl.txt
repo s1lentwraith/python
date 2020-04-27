@@ -1,0 +1,7 @@
+IPV4 ACL "Name"
+10 remark "Name"
+20 permit ip 
+30 permit ip 
+40 permit ip 
+50 permit ip 
+60 permit ip 
