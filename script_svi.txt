@@ -1,0 +1,19 @@
+
+vlan "ID"
+name "description"
+!mode fabric-path
+
+interface Vlan "ID"
+  description "description"
+  no shutdown
+  mtu 9216
+  no ip redirects
+  ip address " IP "
+  no ipv6 redirects
+  ip router eigrp 1
+  ip passive-interface eigrp 1
+  hsrp version 2
+  hsrp "ID"
+    preempt
+    priority 120
+    ip "VIP"
